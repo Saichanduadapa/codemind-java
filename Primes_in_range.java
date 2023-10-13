@@ -1,26 +1,25 @@
 import java.util.*;
 public class Prime{
-    static boolean is_prime(int n)
-    {
-        int p=0;
+    public static int isPrime(int n){
         if(n<2){
-            return(p==1);
+            return 0;
         }
-        for(int i=2;i<(int)Math.sqrt(n)+1;i++){
-            if(n%i==0){
-                p+=1;
-                break;
+        else{
+            for(int i=2;i<=Math.sqrt(n);i++){
+                if(n%i==0){
+                    return 0;
+                }
             }
+            return 1;
         }
-        return(p==0);
     }
     public static void main(String[] args){
-        Scanner s=new Scanner (System.in);
-        int a=s.nextInt();
-        int b=s.nextInt();
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
         int c=0;
         for(int i=a;i<=b;i++){
-            if(is_prime(i)){
+            if(isPrime(i)==1){
                 c+=1;
             }
         }
