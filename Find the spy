@@ -1,0 +1,28 @@
+import java.util.*;
+public class Spy{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int l=sc.nextInt();
+        int n=sc.nextInt();
+        ArrayList<int[]> arr=new ArrayList<>();
+        HashMap<Integer,Integer> mp=new HashMap<>();
+        for(int i=0;i<n;i++){
+            int[] ar=new int[2];
+            ar[0]=sc.nextInt();
+            ar[1]=sc.nextInt();
+            mp.put(ar[0],ar[0]);
+            arr.add(ar);
+        }
+        int a=0;
+        for(int i=0;i<n;i++){
+            if(mp.get(arr.get(i)[1])==null){
+                System.out.println(arr.get(i)[1]);
+                a=1;
+                break;
+            }
+        }
+        if(a==0){
+            System.out.println(-1);
+        }
+    }
+}
