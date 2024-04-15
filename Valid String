@@ -1,0 +1,45 @@
+import java.util.*;
+public class Val{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        HashMap<Character,Integer> mp = new HashMap<>();
+        for(int i = 0 ; i < s.length() ; i++){
+            if( mp.get(s.charAt(i)) == null){
+                mp.put(s.charAt(i) , 1);
+            }
+            else{
+                mp.put( s.charAt(i) , mp.get(s.charAt(i)) + 1);
+            }
+        }
+        ArrayList<Integer> res=new ArrayList<>(mp.values());
+        int a = res.get(0);
+        int t=0;
+        int p=0;
+        for(int i = 1 ; i < res.size() ; i++){
+            if( a == res.get(i)){
+                continue;
+            }
+            else{
+                if(Math.abs(a - res.get(i) )==1){
+                    if(t==0){
+                        t=1;
+                    }
+                    else{
+                        p=1;
+                        System.out.println("Not Valid");
+                        break;
+                    }
+                }
+                else{
+                    p=1;
+                    System.out.println("Not Valid");
+                    break;
+                }
+            }
+        }
+        if(p == 0){
+            System.out.println("Valid String");
+        }
+    }
+}
