@@ -1,0 +1,19 @@
+import java.util.*;
+public class Dig{
+    static int fun(int n){
+        if(Integer.toString(n).length()==1){
+            return n;
+        }
+        int s = 0;
+        while(n!=0){
+            s+=n%10;
+            n /= 10;
+        }
+        return fun(s);
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(fun(n));
+    }
+}
