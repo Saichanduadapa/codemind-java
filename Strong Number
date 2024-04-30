@@ -1,0 +1,29 @@
+import java.util.*;
+public class Strong{
+    static int fun(int n){
+        int s = 1;
+        while(n!=0){
+            s *= n;
+            n--;
+        }
+        
+        return s;
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int  num = n;
+        int ans = 0 ;
+       
+        while(n != 0){
+            ans += fun(n%10);
+            n /= 10;
+        }
+        if(ans == num){
+            System.out.println("The number "+num+" is a strong number");
+        }
+        else{
+            System.out.println("The number "+num+" is not a strong number");
+        }
+    }
+}
